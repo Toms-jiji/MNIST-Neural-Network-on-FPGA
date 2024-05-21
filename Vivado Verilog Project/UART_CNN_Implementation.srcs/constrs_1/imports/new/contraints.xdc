@@ -1,0 +1,12 @@
+#set_output_delay -clock [get_clocks s_axi_aclk] -min -add_delay 0.000 [get_ports {out[*]}]
+#set_output_delay -clock [get_clocks s_axi_aclk] -max -add_delay 0.000 [get_ports {out[*]}]
+#set_output_delay -clock [get_clocks s_axi_aclk] -min -add_delay 0.000 [get_ports out_valid]
+#set_output_delay -clock [get_clocks s_axi_aclk] -max -add_delay 0.000 [get_ports out_valid]
+
+create_clock -period 20.000 -name clock -waveform {0.000 10.000} [get_ports clock]
+set_input_delay -clock [get_clocks clock] -min -add_delay 0.020 [get_ports reset]
+set_input_delay -clock [get_clocks clock] -max -add_delay 0.020 [get_ports reset]
+#set_output_delay -clock [get_clocks clock] -min -add_delay 0.000 [get_ports {out_data[*]}]
+#set_output_delay -clock [get_clocks clock] -max -add_delay 0.020 [get_ports {out_data[*]}]
+#set_output_delay -clock [get_clocks clock] -min -add_delay 0.000 [get_ports out_valid]
+#set_output_delay -clock [get_clocks clock] -max -add_delay 0.020 [get_ports out_valid]

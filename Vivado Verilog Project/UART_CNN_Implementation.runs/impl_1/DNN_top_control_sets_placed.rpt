@@ -1,0 +1,1130 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2023.2 (win64) Build 4029153 Fri Oct 13 20:14:34 MDT 2023
+| Date         : Thu Apr 18 23:50:32 2024
+| Host         : DESKTOP-S44V6ID running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file DNN_top_control_sets_placed.rpt
+| Design       : DNN_top
+| Device       : xc7a100t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |  1052 |
+|    Minimum number of control sets                        |  1052 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |   342 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |  1052 |
+| >= 0 to < 4        |     2 |
+| >= 4 to < 6        |     7 |
+| >= 6 to < 8        |    41 |
+| >= 8 to < 10       |   787 |
+| >= 10 to < 12      |    31 |
+| >= 12 to < 14      |     0 |
+| >= 14 to < 16      |     0 |
+| >= 16              |   184 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             201 |          105 |
+| No           | No                    | Yes                    |              21 |            5 |
+| No           | Yes                   | No                     |            1495 |          370 |
+| Yes          | No                    | No                     |           14046 |         4063 |
+| Yes          | No                    | Yes                    |              24 |            9 |
+| Yes          | Yes                   | No                     |           34911 |         9964 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++------------------+------------------------------------+----------------------------------------------+------------------+----------------+--------------+
+|   Clock Signal   |            Enable Signal           |               Set/Reset Signal               | Slice Load Count | Bel Load Count | Bels / Slice |
++------------------+------------------------------------+----------------------------------------------+------------------+----------------+--------------+
+|  clock_IBUF_BUFG | dut/mFind/out_valid                | reset_IBUF_BUFG                              |                1 |              1 |         1.00 |
+|  clock_IBUF_BUFG | dut/state_0_reg_0                  | reset_IBUF_BUFG                              |                1 |              1 |         1.00 |
+|  clock_IBUF_BUFG | UART/UT1/tick_next                 | reset_IBUF_BUFG                              |                1 |              4 |         4.00 |
+|  clock_IBUF_BUFG | UART/UR1/tick_next                 | reset_IBUF_BUFG                              |                1 |              4 |         4.00 |
+| ~clock_IBUF_BUFG |                                    |                                              |                4 |              4 |         1.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_3               | dut/l4/n_2/sum[30]_i_1__16_n_30              |                2 |              5 |         2.50 |
+|  clock_IBUF_BUFG | dut/data_out_valid_3               | dut/l4/n_0/clear                             |                1 |              5 |         5.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_3               | dut/l4/n_8/sum[30]_i_1__17_n_30              |                2 |              5 |         2.50 |
+|  clock_IBUF_BUFG | dut/data_out_valid_3               | dut/l4/n_9/sum[30]_i_1__18_n_30              |                1 |              5 |         5.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_1               | dut/l2/n_14/comboAdd_i_3_n_30                |                3 |              6 |         2.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_1               | dut/l2/n_15/sum[30]_i_1__3_n_30              |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_1               | dut/l2/n_16/sum[30]_i_1__4_n_30              |                3 |              6 |         2.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_1               | dut/l2/n_17/sum[30]_i_1__5_n_30              |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_1               | dut/l2/n_18/comboAdd_i_2__9_n_30             |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_1               | dut/l2/n_19/comboAdd_i_2__10_n_30            |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_1               | dut/l2/n_20/sum[30]_i_1__6_n_30              |                3 |              6 |         2.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_1               | dut/l2/n_21/comboAdd_i_2__11_n_30            |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_1               | dut/l2/n_22/comboAdd_i_2__12_n_30            |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_1               | dut/l2/n_23/sum[30]_i_1__7_n_30              |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_1               | dut/l2/n_24/comboAdd_i_2__13_n_30            |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_1               | dut/l2/n_25/sum[30]_i_1__8_n_30              |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_1               | dut/l2/n_26/comboAdd_i_2__14_n_30            |                3 |              6 |         2.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_1               | dut/l2/n_27/comboAdd_i_2__15_n_30            |                3 |              6 |         2.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_1               | dut/l2/n_28/sum[30]_i_1__9_n_30              |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG | UART/UB1/E[0]                      | reset_IBUF_BUFG                              |                1 |              6 |         6.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_1               | dut/l2/n_29/sum[30]_i_1__10_n_30             |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_1               | dut/l2/n_10/sum[30]_i_1__2_n_30              |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_1               | dut/l2/n_11/comboAdd_i_2__6_n_30             |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_1               | dut/l2/n_12/comboAdd_i_2__7_n_30             |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_1               | dut/l2/n_13/comboAdd_i_2__8_n_30             |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_2               | dut/l3/n_0/clear                             |                1 |              6 |         6.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_2               | dut/l3/n_1/comboAdd_i_2__17_n_30             |                3 |              6 |         2.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_2               | dut/l3/n_2/sum[30]_i_1__12_n_30              |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_2               | dut/l3/n_3/comboAdd_i_2__18_n_30             |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_2               | dut/l3/n_7/sum[30]_i_1__15_n_30              |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_2               | dut/l3/n_4/sum[30]_i_1__13_n_30              |                3 |              6 |         2.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_2               | dut/l3/n_5/comboAdd_i_2__19_n_30             |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_2               | dut/l3/n_6/sum[30]_i_1__14_n_30              |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_2               | dut/l3/n_8/comboAdd_i_2__20_n_30             |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_2               | dut/l3/n_9/comboAdd_i_2__21_n_30             |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_1               | dut/l2/n_0/clear                             |                4 |              6 |         1.50 |
+|  clock_IBUF_BUFG | dut/data_out_valid_1               | dut/l2/n_1/comboAdd_i_2_n_30                 |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_1               | dut/l2/n_2/sum[30]_i_1__0_n_30               |                1 |              6 |         6.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_1               | dut/l2/n_3/comboAdd_i_2__0_n_30              |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_1               | dut/l2/n_4/comboAdd_i_2__1_n_30              |                3 |              6 |         2.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_1               | dut/l2/n_5/sum[30]_i_1__1_n_30               |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_1               | dut/l2/n_6/comboAdd_i_2__2_n_30              |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_1               | dut/l2/n_7/comboAdd_i_2__3_n_30              |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_1               | dut/l2/n_8/comboAdd_i_2__4_n_30              |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG | dut/data_out_valid_1               | dut/l2/n_9/comboAdd_i_2__5_n_30              |                2 |              6 |         3.00 |
+|  clock_IBUF_BUFG | in2[10030]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[6718]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[670]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[7022]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[6206]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[6622]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[6254]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[7118]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[7454]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[7934]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[7262]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[7470]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[7134]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[7502]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[7534]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[7102]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[7598]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[7694]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[7422]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[718]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[7294]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[7678]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[7710]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[7742]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[7806]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[7342]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[7790]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[7870]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[7902]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[7566]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[7950]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[7614]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[7198]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[766]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[7166]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[7246]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[7966]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[7406]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[750]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[7982]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[798]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[7998]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[7182]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[7150]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[7214]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[7230]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[7310]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[7326]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[7438]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[7662]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[7758]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[7390]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[7774]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[7358]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[7486]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[734]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[7278]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[7518]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[7582]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                1 |              8 |         8.00 |
+|  clock_IBUF_BUFG | in2[7550]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[7646]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[7822]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[782]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[7630]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[7726]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[7838]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[7854]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[7886]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[78]_i_1_n_30                   | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[7374]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[7918]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[8910]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[8174]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8926]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8014]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8190]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[8142]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[8222]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[8302]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8334]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[8398]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8494]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[814]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8046]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8574]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[8622]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8750]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8766]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8094]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8782]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[8894]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[8942]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                1 |              8 |         8.00 |
+|  clock_IBUF_BUFG | in2[8366]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[8462]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8542]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[8606]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8526]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8446]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8558]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[8638]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[830]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[862]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[8702]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[8478]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[8286]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[8686]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8062]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8078]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8158]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                1 |              8 |         8.00 |
+|  clock_IBUF_BUFG | in2[8270]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8670]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[846]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[8734]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8798]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8830]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8430]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8590]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[8206]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8110]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8030]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8318]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8382]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[8254]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[8350]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8510]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[8654]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[8718]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[878]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[8814]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[8846]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[8878]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[2510]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8238]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8126]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8862]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[9694]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[9806]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[9662]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[9198]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[9070]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[9342]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[9374]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[9150]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[9134]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[9438]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[9678]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[9790]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[9822]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[9086]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[9326]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[9614]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[9630]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[9710]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[9102]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[9646]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[9230]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[9502]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[9566]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[974]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[9262]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[9310]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[958]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[9598]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[9182]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[8974]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[942]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[9726]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[9742]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[9038]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[9006]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[9054]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[910]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[9118]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[9166]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[9246]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[9294]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[9422]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[9022]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[9454]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[894]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[94]_i_1_n_30                   | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[9518]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[9358]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[9582]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[9758]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[9470]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[9774]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[9214]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[9278]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[9406]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[9550]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[9838]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[9854]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[9486]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8958]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8990]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[9390]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[926]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[9534]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[9998]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[9950]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[990]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[9966]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[9934]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[9902]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[9870]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[9918]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[9982]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                1 |              8 |         8.00 |
+|  clock_IBUF_BUFG | in2[9886]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | read_valid                         |                                              |                7 |              8 |         1.14 |
+|  clock_IBUF_BUFG | UART/UR1/data_next                 | reset_IBUF_BUFG                              |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | UART/UT1/data_next_0               | reset_IBUF_BUFG                              |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[1006]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[10078]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[10014]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[10046]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[10062]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[10638]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[10830]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[10846]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[10174]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[10702]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[10654]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[10334]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[1086]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[10894]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[10766]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[10910]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[10286]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[10206]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[10542]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[10558]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[10670]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[10926]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[10942]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[10238]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[10606]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[10862]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[10366]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[10958]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[10494]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[10878]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[10974]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[11006]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[11022]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[10158]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[10526]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[10750]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[10382]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[10990]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[10430]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[10462]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[10142]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[10222]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[1022]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[10350]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[1038]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[10302]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[10478]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[10574]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[10590]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[10398]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[10734]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[10414]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[10686]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[10254]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[10190]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[10446]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[10510]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[1054]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[10622]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[10718]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[10782]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[10798]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[10814]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[10126]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[10094]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[10110]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[1070]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                6 |              8 |         1.33 |
+|  clock_IBUF_BUFG | in2[10270]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[10318]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[11406]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[11422]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[11150]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[11454]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[1102]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[11534]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[11102]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[11566]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[11310]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[11374]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[11118]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[110]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[1118]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[11486]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[11518]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[11598]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[1166]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[11214]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[11246]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[11086]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[11182]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[11262]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[11502]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[11358]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[11166]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[11390]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[11070]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[11470]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[1150]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[11326]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[11038]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[1134]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[11294]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[11582]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[11230]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[11438]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[11646]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[11614]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[11662]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[11054]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[11198]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[11134]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[11550]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[11630]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[11278]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[11342]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[11678]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[11758]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[11886]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[1198]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[11998]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[11822]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[11950]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[11902]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[11726]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[1182]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[11870]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[11774]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[11918]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[11854]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[11694]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[11934]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[11966]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[11790]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[11806]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[11710]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[11742]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[11838]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[11982]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[12318]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[12286]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[12206]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[12334]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[12302]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                6 |              8 |         1.33 |
+|  clock_IBUF_BUFG | in2[12078]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                6 |              8 |         1.33 |
+|  clock_IBUF_BUFG | in2[12142]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[12222]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[12238]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[12190]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[12014]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[12254]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[12030]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[12110]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[1214]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[12174]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[12270]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[12158]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                6 |              8 |         1.33 |
+|  clock_IBUF_BUFG | in2[12126]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[12094]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[12046]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[12062]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[1230]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                6 |              8 |         1.33 |
+|  clock_IBUF_BUFG | in2[1310]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[12510]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[1246]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[12542]_i_2_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[12398]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[1294]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[1326]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[1358]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[142]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[1518]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[1534]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[1550]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[1262]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[1278]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[1422]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[12414]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[12366]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[12350]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[12430]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[12446]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[12462]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[12382]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[1342]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[126]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[12526]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[1406]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[1390]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                6 |              8 |         1.33 |
+|  clock_IBUF_BUFG | in2[1438]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[12478]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[1470]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[1486]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[12494]_i_1_n_30                | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[14]_i_1_n_30                   | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[1502]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[1374]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[1454]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[1982]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[2190]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[1950]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[2334]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[1662]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[2062]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[1742]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[158]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[2014]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[1886]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[206]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[1694]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[2158]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[2206]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[2318]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[2382]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[238]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[2398]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[2430]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[1582]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[1918]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[1758]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[2446]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[2094]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[2462]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[2478]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[2078]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[2110]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[1966]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[2270]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[1870]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[1774]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[2366]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[2414]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[1934]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[1614]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[1630]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[1566]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[1598]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[1646]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[1710]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[174]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[1790]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[1854]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[1806]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[1902]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[1998]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[2030]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[2142]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[1678]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[190]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[2174]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[1838]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[2046]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                1 |              8 |         8.00 |
+|  clock_IBUF_BUFG | in2[2222]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[2286]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                6 |              8 |         1.33 |
+|  clock_IBUF_BUFG | in2[2254]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[2238]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[2302]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[2350]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[222]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[1822]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[2126]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[1726]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[2958]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[2990]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[3326]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[8414]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[3006]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[3198]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[302]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[2974]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[3166]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[3022]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[2910]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[270]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[2542]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[2846]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[3214]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[3262]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[3294]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[2814]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                1 |              8 |         8.00 |
+|  clock_IBUF_BUFG | in2[2574]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[3342]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[2782]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[2798]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[2830]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[2622]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[2654]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[2766]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[2878]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[2670]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[2494]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[2894]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[286]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[3054]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[3070]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[3118]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[3230]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[3086]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[254]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[2558]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[3038]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[3150]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[2718]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[2942]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[3182]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[3246]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[30]_i_1_n_30                   | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[2702]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[3278]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[2638]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[2590]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[2526]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[2926]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[3310]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[334]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[2750]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[318]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[3358]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[3374]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[3390]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[2862]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[3102]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[3134]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[2686]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[2606]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[2734]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[430]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[4318]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[3710]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                6 |              8 |         1.33 |
+|  clock_IBUF_BUFG | in2[4110]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[3486]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[3726]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[3758]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[3806]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[3998]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[3438]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[3966]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[3582]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[4078]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[3454]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[3422]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[3518]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[366]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[3774]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[3822]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                1 |              8 |         8.00 |
+|  clock_IBUF_BUFG | in2[3950]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[3982]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[4046]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[4062]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[3630]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[3566]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[3406]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[350]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[3614]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[3678]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[3550]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[382]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[3870]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[3934]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[3662]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[4030]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[3502]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[4014]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[3854]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[4126]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[3838]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                1 |              8 |         8.00 |
+|  clock_IBUF_BUFG | in2[414]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[3646]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[3694]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[4158]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[3534]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[3598]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[3790]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[3886]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[3918]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[4094]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[4174]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[4206]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[4222]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[4190]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[4238]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[3742]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[4254]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[3470]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[398]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[4270]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[4286]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[4302]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[3902]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[4142]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[4974]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[4430]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[5166]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[5230]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[5214]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[4558]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[4814]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[5182]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[5246]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[4478]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[4958]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[4782]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[4366]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[4462]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[4686]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[4926]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[5054]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[5070]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[4414]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[4526]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[4942]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[4846]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[5086]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[4718]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[4638]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[4878]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[4446]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[4734]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[4382]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[46]_i_1_n_30                   | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[446]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[4574]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[4910]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[5006]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[4542]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[494]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[4830]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[4494]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[4350]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[4670]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[478]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[4990]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[5038]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[510]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[462]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[4606]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[4766]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[5118]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[4862]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[4590]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[4510]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[5022]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[4894]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[5134]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[4334]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[4654]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[5102]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[4398]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[4702]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[5150]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[5198]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[4750]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[4622]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                1 |              8 |         8.00 |
+|  clock_IBUF_BUFG | in2[4798]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[5982]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[5998]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[6014]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[6030]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[5726]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[5614]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[5662]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[6046]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[6062]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[5342]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[606]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[5262]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[6078]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[5550]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[6094]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[6110]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[6126]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[5518]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[6142]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[6158]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                1 |              8 |         8.00 |
+|  clock_IBUF_BUFG | in2[6174]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[5486]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[5534]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[5294]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[5694]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[5742]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[5374]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[5278]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[5390]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[5790]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[5582]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[5838]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[5902]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[5326]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[5470]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[5758]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                6 |              8 |         1.33 |
+|  clock_IBUF_BUFG | in2[5950]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[558]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[5822]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[5598]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[5422]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[5310]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[5774]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[5806]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[5502]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[526]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[5630]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[5854]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[5358]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[5646]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[5710]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[5886]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[5678]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[5406]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[590]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[5918]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[574]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[5934]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[5454]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[542]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[5438]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[5566]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[5870]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[5966]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[6782]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[6702]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[6862]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[7086]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[6846]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[6478]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[6270]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[6430]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[6494]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[6382]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[6542]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[622]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[6366]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[638]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[6574]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[6670]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[6910]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[6974]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[7006]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[6958]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[6814]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[62]_i_1_n_30                   | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[6526]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[6318]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[6414]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[6750]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[6510]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[6190]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                1 |              8 |         8.00 |
+|  clock_IBUF_BUFG | in2[6990]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[6350]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[6654]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[6894]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[702]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[6734]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[6302]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[7070]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[6286]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[6686]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[6830]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[6558]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[6238]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[6446]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[6878]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[6926]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[6638]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[6222]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[6590]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[6606]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[6334]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[6766]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                2 |              8 |         4.00 |
+|  clock_IBUF_BUFG | in2[654]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[6942]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[6798]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                6 |              8 |         1.33 |
+|  clock_IBUF_BUFG | in2[6462]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                4 |              8 |         2.00 |
+|  clock_IBUF_BUFG | in2[686]_i_1_n_30                  | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[6398]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                5 |              8 |         1.60 |
+|  clock_IBUF_BUFG | in2[7038]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG | in2[7054]_i_1_n_30                 | dut/mFind/o_data_valid_reg_0                 |                3 |              8 |         2.67 |
+|  clock_IBUF_BUFG |                                    | dut/l3/n_0/muxValid_f_reg_0                  |                8 |             10 |         1.25 |
+|  clock_IBUF_BUFG | dut/data_out_valid_0               | dut/l1/n_13/comboAdd_i_2__34_n_30            |                3 |             11 |         3.67 |
+|  clock_IBUF_BUFG | dut/data_out_valid_0               | dut/l1/n_18/sum[30]_i_1__30_n_30             |                3 |             11 |         3.67 |
+|  clock_IBUF_BUFG | dut/data_out_valid_0               | dut/l1/n_22/comboAdd_i_2__35_n_30            |                2 |             11 |         5.50 |
+|  clock_IBUF_BUFG | dut/data_out_valid_0               | dut/l1/n_21/sum[30]_i_1__33_n_30             |                3 |             11 |         3.67 |
+|  clock_IBUF_BUFG | dut/data_out_valid_0               | dut/l1/n_3/sum[30]_i_1__21_n_30              |                2 |             11 |         5.50 |
+|  clock_IBUF_BUFG | dut/data_out_valid_0               | dut/l1/n_17/sum[30]_i_1__29_n_30             |                2 |             11 |         5.50 |
+|  clock_IBUF_BUFG | dut/data_out_valid_0               | dut/l1/n_16/sum[30]_i_1__28_n_30             |                2 |             11 |         5.50 |
+|  clock_IBUF_BUFG | dut/data_out_valid_0               | dut/l1/n_6/comboAdd_i_2__31_n_30             |                2 |             11 |         5.50 |
+|  clock_IBUF_BUFG | dut/data_out_valid_0               | dut/l1/n_0/clear                             |                3 |             11 |         3.67 |
+|  clock_IBUF_BUFG | dut/data_out_valid_0               | dut/l1/n_19/sum[30]_i_1__31_n_30             |                5 |             11 |         2.20 |
+|  clock_IBUF_BUFG | dut/data_out_valid_0               | dut/l1/n_20/sum[30]_i_1__32_n_30             |                5 |             11 |         2.20 |
+|  clock_IBUF_BUFG | dut/data_out_valid_0               | dut/l1/n_9/comboAdd_i_2__32_n_30             |                2 |             11 |         5.50 |
+|  clock_IBUF_BUFG | dut/data_out_valid_0               | dut/l1/n_10/comboAdd_i_2__33_n_30            |                2 |             11 |         5.50 |
+|  clock_IBUF_BUFG | dut/data_out_valid_0               | dut/l1/n_1/sum[30]_i_1__19_n_30              |                4 |             11 |         2.75 |
+|  clock_IBUF_BUFG | dut/data_out_valid_0               | dut/l1/n_2/sum[30]_i_1__20_n_30              |                4 |             11 |         2.75 |
+|  clock_IBUF_BUFG | dut/data_out_valid_0               | dut/l1/n_11/sum[30]_i_1__24_n_30             |                2 |             11 |         5.50 |
+|  clock_IBUF_BUFG | dut/data_out_valid_0               | dut/l1/n_12/sum[30]_i_1__25_n_30             |                5 |             11 |         2.20 |
+|  clock_IBUF_BUFG | dut/data_out_valid_0               | dut/l1/n_7/sum[30]_i_1__22_n_30              |                2 |             11 |         5.50 |
+|  clock_IBUF_BUFG | dut/data_out_valid_0               | dut/l1/n_8/sum[30]_i_1__23_n_30              |                3 |             11 |         3.67 |
+|  clock_IBUF_BUFG | dut/data_out_valid_0               | dut/l1/n_29/comboAdd_i_2__40_n_30            |                2 |             11 |         5.50 |
+|  clock_IBUF_BUFG | dut/data_out_valid_0               | dut/l1/n_4/comboAdd_i_2__29_n_30             |                4 |             11 |         2.75 |
+|  clock_IBUF_BUFG | dut/data_out_valid_0               | dut/l1/n_5/comboAdd_i_2__30_n_30             |                3 |             11 |         3.67 |
+|  clock_IBUF_BUFG | dut/data_out_valid_0               | dut/l1/n_26/comboAdd_i_2__38_n_30            |                3 |             11 |         3.67 |
+|  clock_IBUF_BUFG | dut/data_out_valid_0               | dut/l1/n_27/comboAdd_i_2__39_n_30            |                2 |             11 |         5.50 |
+|  clock_IBUF_BUFG | dut/data_out_valid_0               | dut/l1/n_28/sum[30]_i_1__35_n_30             |                2 |             11 |         5.50 |
+|  clock_IBUF_BUFG | dut/data_out_valid_0               | dut/l1/n_23/sum[30]_i_1__34_n_30             |                3 |             11 |         3.67 |
+|  clock_IBUF_BUFG | dut/data_out_valid_0               | dut/l1/n_24/comboAdd_i_2__36_n_30            |                4 |             11 |         2.75 |
+|  clock_IBUF_BUFG | dut/data_out_valid_0               | dut/l1/n_25/comboAdd_i_2__37_n_30            |                2 |             11 |         5.50 |
+|  clock_IBUF_BUFG | dut/data_out_valid_0               | dut/l1/n_14/sum[30]_i_1__26_n_30             |                3 |             11 |         3.67 |
+|  clock_IBUF_BUFG | dut/data_out_valid_0               | dut/l1/n_15/sum[30]_i_1__27_n_30             |                3 |             11 |         3.67 |
+|  clock_IBUF_BUFG |                                    | dut/l1/n_14/ReLUinst.s1/out[15]_i_1__63_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l1/n_15/ReLUinst.s1/out[15]_i_1__64_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l1/n_13/ReLUinst.s1/out[15]_i_1__62_n_30 |                5 |             16 |         3.20 |
+|  clock_IBUF_BUFG |                                    | dut/l2/n_2/ReLUinst.s1/out[15]_i_1__1_n_30   |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l2/n_3/ReLUinst.s1/out[15]_i_1__2_n_30   |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l2/n_4/ReLUinst.s1/out[15]_i_1__3_n_30   |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l2/n_5/ReLUinst.s1/out[15]_i_1__4_n_30   |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l2/n_6/ReLUinst.s1/out[15]_i_1__5_n_30   |                4 |             16 |         4.00 |
+|  clock_IBUF_BUFG |                                    | dut/l2/n_7/ReLUinst.s1/out[15]_i_1__6_n_30   |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l2/n_8/ReLUinst.s1/out[15]_i_1__7_n_30   |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l2/n_9/ReLUinst.s1/out[15]_i_1__8_n_30   |                4 |             16 |         4.00 |
+|  clock_IBUF_BUFG |                                    | dut/l2/n_10/ReLUinst.s1/out[15]_i_1__9_n_30  |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l2/n_11/ReLUinst.s1/out[15]_i_1__10_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l2/n_12/ReLUinst.s1/out[15]_i_1__11_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l2/n_13/ReLUinst.s1/out[15]_i_1__12_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l2/n_14/ReLUinst.s1/out[15]_i_1__13_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l2/n_15/ReLUinst.s1/out[15]_i_1__14_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l2/n_16/ReLUinst.s1/out[15]_i_1__15_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l2/n_17/ReLUinst.s1/out[15]_i_1__16_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l2/n_18/ReLUinst.s1/out[15]_i_1__17_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l2/n_19/ReLUinst.s1/out[15]_i_1__18_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l2/n_20/ReLUinst.s1/out[15]_i_1__19_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l2/n_21/ReLUinst.s1/out[15]_i_1__20_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l2/n_22/ReLUinst.s1/out[15]_i_1__21_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l2/n_23/ReLUinst.s1/out[15]_i_1__22_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l2/n_24/ReLUinst.s1/out[15]_i_1__23_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l2/n_25/ReLUinst.s1/out[15]_i_1__24_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l2/n_26/ReLUinst.s1/out[15]_i_1__25_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l1/n_1/ReLUinst.s1/out[15]_i_1__50_n_30  |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l2/n_28/ReLUinst.s1/out[15]_i_1__27_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l2/n_29/ReLUinst.s1/out[15]_i_1__28_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l3/n_0/ReLUinst.s1/out[15]_i_1__29_n_30  |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l3/n_1/ReLUinst.s1/out[15]_i_1__30_n_30  |                5 |             16 |         3.20 |
+|  clock_IBUF_BUFG |                                    | dut/l3/n_2/ReLUinst.s1/out[15]_i_1__31_n_30  |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l3/n_3/ReLUinst.s1/out[15]_i_1__32_n_30  |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l3/n_4/ReLUinst.s1/out[15]_i_1__33_n_30  |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l3/n_5/ReLUinst.s1/out[15]_i_1__34_n_30  |                4 |             16 |         4.00 |
+|  clock_IBUF_BUFG |                                    | dut/l3/n_6/ReLUinst.s1/out[15]_i_1__35_n_30  |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l3/n_7/ReLUinst.s1/out[15]_i_1__36_n_30  |                4 |             16 |         4.00 |
+|  clock_IBUF_BUFG |                                    | dut/l3/n_8/ReLUinst.s1/out[15]_i_1__37_n_30  |                4 |             16 |         4.00 |
+|  clock_IBUF_BUFG |                                    | dut/l3/n_9/ReLUinst.s1/out[15]_i_1__38_n_30  |                4 |             16 |         4.00 |
+|  clock_IBUF_BUFG |                                    | dut/l4/n_1/ReLUinst.s1/out[15]_i_1__40_n_30  |                5 |             16 |         3.20 |
+|  clock_IBUF_BUFG |                                    | dut/l4/n_0/ReLUinst.s1/out[15]_i_1__39_n_30  |                4 |             16 |         4.00 |
+|  clock_IBUF_BUFG |                                    | dut/l4/n_2/ReLUinst.s1/out[15]_i_1__41_n_30  |                6 |             16 |         2.67 |
+|  clock_IBUF_BUFG |                                    | dut/l4/n_3/ReLUinst.s1/out[15]_i_1__42_n_30  |                6 |             16 |         2.67 |
+|  clock_IBUF_BUFG |                                    | dut/l4/n_4/ReLUinst.s1/out[15]_i_1__43_n_30  |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l4/n_8/ReLUinst.s1/out[15]_i_1__47_n_30  |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l4/n_5/ReLUinst.s1/out[15]_i_1__44_n_30  |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l4/n_6/ReLUinst.s1/out[15]_i_1__45_n_30  |                6 |             16 |         2.67 |
+|  clock_IBUF_BUFG |                                    | dut/l4/n_7/ReLUinst.s1/out[15]_i_1__46_n_30  |                4 |             16 |         4.00 |
+|  clock_IBUF_BUFG |                                    | dut/l4/n_9/ReLUinst.s1/out[15]_i_1__48_n_30  |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l1/n_18/ReLUinst.s1/out[15]_i_1__67_n_30 |                5 |             16 |         3.20 |
+|  clock_IBUF_BUFG |                                    | dut/l1/n_16/ReLUinst.s1/out[15]_i_1__65_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l1/n_17/ReLUinst.s1/out[15]_i_1__66_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l1/n_21/ReLUinst.s1/out[15]_i_1__70_n_30 |                4 |             16 |         4.00 |
+|  clock_IBUF_BUFG |                                    | dut/l1/n_22/ReLUinst.s1/out[15]_i_1__71_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l1/n_23/ReLUinst.s1/out[15]_i_1__72_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG | dut/l3/n_0/holdData_3              | dut/holdData_3[159]_i_1_n_30                 |                5 |             16 |         3.20 |
+|  clock_IBUF_BUFG | dut/l1/n_0/holdData_1              | dut/holdData_1[479]_i_1_n_30                 |                4 |             16 |         4.00 |
+|  clock_IBUF_BUFG | dut/mFind/maxValue[15]_i_1_n_30    |                                              |                2 |             16 |         8.00 |
+|  clock_IBUF_BUFG |                                    | dut/l1/n_19/ReLUinst.s1/out[15]_i_1__68_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l1/n_20/ReLUinst.s1/out[15]_i_1__69_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l1/n_3/ReLUinst.s1/out[15]_i_1__52_n_30  |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l2/n_1/ReLUinst.s1/out[15]_i_1__0_n_30   |                4 |             16 |         4.00 |
+|  clock_IBUF_BUFG |                                    | dut/l2/n_0/ReLUinst.s1/out[15]_i_1_n_30      |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l1/n_10/ReLUinst.s1/out[15]_i_1__59_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l1/n_0/ReLUinst.s1/out[15]_i_1__49_n_30  |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l1/n_11/ReLUinst.s1/out[15]_i_1__60_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l1/n_12/ReLUinst.s1/out[15]_i_1__61_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l2/n_27/ReLUinst.s1/out[15]_i_1__26_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l1/n_2/ReLUinst.s1/out[15]_i_1__51_n_30  |                4 |             16 |         4.00 |
+|  clock_IBUF_BUFG |                                    | dut/l1/n_7/ReLUinst.s1/out[15]_i_1__56_n_30  |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l1/n_8/ReLUinst.s1/out[15]_i_1__57_n_30  |                4 |             16 |         4.00 |
+|  clock_IBUF_BUFG |                                    | dut/l1/n_9/ReLUinst.s1/out[15]_i_1__58_n_30  |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l1/n_4/ReLUinst.s1/out[15]_i_1__53_n_30  |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l1/n_5/ReLUinst.s1/out[15]_i_1__54_n_30  |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l1/n_6/ReLUinst.s1/out[15]_i_1__55_n_30  |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l1/n_27/ReLUinst.s1/out[15]_i_1__76_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l1/n_28/ReLUinst.s1/out[15]_i_1__77_n_30 |                4 |             16 |         4.00 |
+|  clock_IBUF_BUFG |                                    | dut/l1/n_29/ReLUinst.s1/out[15]_i_1__78_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l1/n_24/ReLUinst.s1/out[15]_i_1__73_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l1/n_25/ReLUinst.s1/out[15]_i_1__74_n_30 |                3 |             16 |         5.33 |
+|  clock_IBUF_BUFG |                                    | dut/l1/n_26/ReLUinst.s1/out[15]_i_1__75_n_30 |                5 |             16 |         3.20 |
+|  clock_IBUF_BUFG | dut/l2/n_0/holdData_2              | dut/holdData_2[479]_i_1_n_30                 |                4 |             16 |         4.00 |
+|  clock_IBUF_BUFG | dut/mFind/maxValue                 | dut/l4/n_0/outvalid_reg_0                    |                7 |             20 |         2.86 |
+|  clock_IBUF_BUFG |                                    | dut/l2/n_0/muxValid_f_reg_0                  |               19 |             30 |         1.58 |
+|  clock_IBUF_BUFG |                                    | dut/l1/n_0/muxValid_f_reg_0                  |               25 |             30 |         1.20 |
+|  clock_IBUF_BUFG | dut/l1/n_0/mult_valid_reg_1        | dut/l1/n_2/sum[30]_i_1__20_n_30              |               10 |             31 |         3.10 |
+|  clock_IBUF_BUFG | dut/l1/n_0/mult_valid_reg_13       | dut/l1/n_14/sum[30]_i_1__26_n_30             |                8 |             31 |         3.88 |
+|  clock_IBUF_BUFG | dut/l1/n_0/mult_valid_reg_15       | dut/l1/n_16/sum[30]_i_1__28_n_30             |                8 |             31 |         3.88 |
+|  clock_IBUF_BUFG | dut/l1/n_0/mult_valid_reg_18       | dut/l1/n_19/sum[30]_i_1__31_n_30             |                9 |             31 |         3.44 |
+|  clock_IBUF_BUFG | dut/l1/n_0/mult_valid_reg_27       | dut/l1/n_28/sum[30]_i_1__35_n_30             |                8 |             31 |         3.88 |
+|  clock_IBUF_BUFG | dut/l3/n_0/mult_valid_reg_1        | dut/l3/n_2/sum[30]_i_1__12_n_30              |               10 |             31 |         3.10 |
+|  clock_IBUF_BUFG | dut/l3/n_0/mult_valid_reg_3        | dut/l3/n_4/sum[30]_i_1__13_n_30              |               10 |             31 |         3.10 |
+|  clock_IBUF_BUFG | dut/l3/n_0/mult_valid_reg_5        | dut/l3/n_6/sum[30]_i_1__14_n_30              |                9 |             31 |         3.44 |
+|  clock_IBUF_BUFG | dut/l3/n_0/p_0_in                  | dut/l3/n_0/clear                             |               10 |             31 |         3.10 |
+|  clock_IBUF_BUFG | dut/l3/n_0/mult_valid_reg_6        | dut/l3/n_7/sum[30]_i_1__15_n_30              |                8 |             31 |         3.88 |
+|  clock_IBUF_BUFG | dut/l4/n_0/mult_valid_reg_0        | dut/l4/n_2/sum[30]_i_1__16_n_30              |               10 |             31 |         3.10 |
+|  clock_IBUF_BUFG | dut/l4/n_0/mult_valid_reg_6        | dut/l4/n_8/sum[30]_i_1__17_n_30              |               10 |             31 |         3.10 |
+|  clock_IBUF_BUFG | dut/l4/n_0/mult_valid_reg_7        | dut/l4/n_9/sum[30]_i_1__18_n_30              |                8 |             31 |         3.88 |
+|  clock_IBUF_BUFG | dut/l2/n_0/mult_valid_reg_22       | dut/l2/n_23/sum[30]_i_1__7_n_30              |                8 |             31 |         3.88 |
+|  clock_IBUF_BUFG | dut/l2/n_0/mult_valid_reg_28       | dut/l2/n_29/sum[30]_i_1__10_n_30             |                8 |             31 |         3.88 |
+|  clock_IBUF_BUFG | dut/l2/n_0/mult_valid_reg_19       | dut/l2/n_20/sum[30]_i_1__6_n_30              |                8 |             31 |         3.88 |
+|  clock_IBUF_BUFG | dut/l2/n_0/mult_valid_reg_24       | dut/l2/n_25/sum[30]_i_1__8_n_30              |               11 |             31 |         2.82 |
+|  clock_IBUF_BUFG | dut/l2/n_0/mult_valid_reg_9        | dut/l2/n_10/sum[30]_i_1__2_n_30              |                9 |             31 |         3.44 |
+|  clock_IBUF_BUFG | dut/l2/n_0/mult_valid_reg_15       | dut/l2/n_16/sum[30]_i_1__4_n_30              |                8 |             31 |         3.88 |
+|  clock_IBUF_BUFG | dut/l2/n_0/p_0_in                  | dut/l2/n_0/clear                             |               10 |             31 |         3.10 |
+|  clock_IBUF_BUFG | dut/l2/n_0/mult_valid_reg_14       | dut/l2/n_15/sum[30]_i_1__3_n_30              |                8 |             31 |         3.88 |
+|  clock_IBUF_BUFG | dut/l2/n_0/mult_valid_reg_27       | dut/l2/n_28/sum[30]_i_1__9_n_30              |                8 |             31 |         3.88 |
+|  clock_IBUF_BUFG | dut/l2/n_0/mult_valid_reg_16       | dut/l2/n_17/sum[30]_i_1__5_n_30              |                8 |             31 |         3.88 |
+|  clock_IBUF_BUFG | dut/l2/n_0/mult_valid_reg_4        | dut/l2/n_5/sum[30]_i_1__1_n_30               |                9 |             31 |         3.44 |
+|  clock_IBUF_BUFG | dut/l2/n_0/mult_valid_reg_1        | dut/l2/n_2/sum[30]_i_1__0_n_30               |                9 |             31 |         3.44 |
+|  clock_IBUF_BUFG | dut/l1/n_0/mult_valid_reg_22       | dut/l1/n_23/sum[30]_i_1__34_n_30             |                9 |             31 |         3.44 |
+|  clock_IBUF_BUFG | dut/l1/n_0/mult_valid_reg_0        | dut/l1/n_1/sum[30]_i_1__19_n_30              |               10 |             31 |         3.10 |
+|  clock_IBUF_BUFG | dut/l1/n_0/mult_valid_reg_20       | dut/l1/n_21/sum[30]_i_1__33_n_30             |                8 |             31 |         3.88 |
+|  clock_IBUF_BUFG | dut/l1/n_0/mult_valid_reg_17       | dut/l1/n_18/sum[30]_i_1__30_n_30             |               10 |             31 |         3.10 |
+|  clock_IBUF_BUFG | dut/l1/n_0/mult_valid_reg_7        | dut/l1/n_8/sum[30]_i_1__23_n_30              |                9 |             31 |         3.44 |
+|  clock_IBUF_BUFG | dut/l1/n_0/mult_valid_reg_14       | dut/l1/n_15/sum[30]_i_1__27_n_30             |                8 |             31 |         3.88 |
+|  clock_IBUF_BUFG | dut/l1/n_0/mult_valid_reg_16       | dut/l1/n_17/sum[30]_i_1__29_n_30             |                9 |             31 |         3.44 |
+|  clock_IBUF_BUFG | dut/l1/n_0/mult_valid_reg_11       | dut/l1/n_12/sum[30]_i_1__25_n_30             |                8 |             31 |         3.88 |
+|  clock_IBUF_BUFG | dut/l1/n_0/mult_valid_reg_2        | dut/l1/n_3/sum[30]_i_1__21_n_30              |                8 |             31 |         3.88 |
+|  clock_IBUF_BUFG | dut/l1/n_0/mult_valid_reg_6        | dut/l1/n_7/sum[30]_i_1__22_n_30              |                9 |             31 |         3.44 |
+|  clock_IBUF_BUFG | dut/l1/n_0/mult_valid_reg_10       | dut/l1/n_11/sum[30]_i_1__24_n_30             |               10 |             31 |         3.10 |
+|  clock_IBUF_BUFG | dut/l1/n_0/mult_valid_reg_19       | dut/l1/n_20/sum[30]_i_1__32_n_30             |                9 |             31 |         3.44 |
+|  clock_IBUF_BUFG | dut/l2/n_0/mult_valid_reg_0[0]     | dut/l2/n_1/comboAdd_i_2_n_30                 |               12 |             32 |         2.67 |
+|  clock_IBUF_BUFG | dut/l2/n_0/mult_valid_reg_7[0]     | dut/l2/n_8/comboAdd_i_2__4_n_30              |               10 |             32 |         3.20 |
+|  clock_IBUF_BUFG | dut/l2/n_0/mult_valid_reg_8[0]     | dut/l2/n_9/comboAdd_i_2__5_n_30              |                8 |             32 |         4.00 |
+|  clock_IBUF_BUFG | dut/l3/n_0/mult_valid_reg_0[0]     | dut/l3/n_1/comboAdd_i_2__17_n_30             |               14 |             32 |         2.29 |
+|  clock_IBUF_BUFG | dut/l3/n_0/mult_valid_reg_4[0]     | dut/l3/n_5/comboAdd_i_2__19_n_30             |               13 |             32 |         2.46 |
+|  clock_IBUF_BUFG | dut/l3/n_0/mult_valid_reg_8[0]     | dut/l3/n_9/comboAdd_i_2__21_n_30             |                7 |             32 |         4.57 |
+|  clock_IBUF_BUFG | dut/l3/n_0/mult_valid_reg_2[0]     | dut/l3/n_3/comboAdd_i_2__18_n_30             |                9 |             32 |         3.56 |
+|  clock_IBUF_BUFG | dut/l2/n_0/mult_valid_reg_13[0]    | dut/l2/n_14/comboAdd_i_3_n_30                |                7 |             32 |         4.57 |
+|  clock_IBUF_BUFG | dut/l2/n_0/mult_valid_reg_3[0]     | dut/l2/n_4/comboAdd_i_2__1_n_30              |               14 |             32 |         2.29 |
+|  clock_IBUF_BUFG | dut/l2/n_0/mult_valid_reg_25[0]    | dut/l2/n_26/comboAdd_i_2__14_n_30            |               10 |             32 |         3.20 |
+|  clock_IBUF_BUFG | dut/l1/n_0/p_0_in                  | dut/l1/n_0/clear                             |               10 |             32 |         3.20 |
+|  clock_IBUF_BUFG | dut/l4/n_0/p_0_in                  | dut/l4/n_0/clear                             |               10 |             32 |         3.20 |
+|  clock_IBUF_BUFG | dut/l2/n_0/mult_valid_reg_26[0]    | dut/l2/n_27/comboAdd_i_2__15_n_30            |               10 |             32 |         3.20 |
+|  clock_IBUF_BUFG | dut/l4/n_0/mult_valid_reg_4[0]     | dut/l4/n_6/comboAdd_i_2__26_n_30             |               12 |             32 |         2.67 |
+|  clock_IBUF_BUFG | dut/l4/n_0/mult_valid_reg_2[0]     | dut/l4/n_4/comboAdd_i_2__24_n_30             |               10 |             32 |         3.20 |
+|  clock_IBUF_BUFG | dut/l4/n_0/E[0]                    | dut/l4/n_1/comboAdd_i_2__22_n_30             |                9 |             32 |         3.56 |
+|  clock_IBUF_BUFG | dut/l4/n_0/mult_valid_reg_3[0]     | dut/l4/n_5/comboAdd_i_2__25_n_30             |                7 |             32 |         4.57 |
+|  clock_IBUF_BUFG | dut/l4/n_0/mult_valid_reg_5[0]     | dut/l4/n_7/comboAdd_i_2__27_n_30             |                7 |             32 |         4.57 |
+|  clock_IBUF_BUFG | dut/l4/n_0/mult_valid_reg_1[0]     | dut/l4/n_3/comboAdd_i_2__23_n_30             |               11 |             32 |         2.91 |
+|  clock_IBUF_BUFG | dut/mFind/counter                  | dut/l4/n_0/outvalid_reg_0                    |               13 |             32 |         2.46 |
+|  clock_IBUF_BUFG | dut/l2/n_0/mult_valid_reg_10[0]    | dut/l2/n_11/comboAdd_i_2__6_n_30             |               11 |             32 |         2.91 |
+|  clock_IBUF_BUFG | dut/l2/n_0/mult_valid_reg_12[0]    | dut/l2/n_13/comboAdd_i_2__8_n_30             |                9 |             32 |         3.56 |
+| ~clock_IBUF_BUFG | UART/UB1/count                     | reset_IBUF_BUFG                              |                5 |             32 |         6.40 |
+|  clock_IBUF_BUFG | dut/l2/n_0/mult_valid_reg_18[0]    | dut/l2/n_19/comboAdd_i_2__10_n_30            |                9 |             32 |         3.56 |
+|  clock_IBUF_BUFG |                                    | dut/count_3                                  |                8 |             32 |         4.00 |
+|  clock_IBUF_BUFG |                                    | dut/count_2                                  |                8 |             32 |         4.00 |
+|  clock_IBUF_BUFG |                                    | dut/count_1                                  |                8 |             32 |         4.00 |
+|  clock_IBUF_BUFG |                                    | dut/count_0                                  |                8 |             32 |         4.00 |
+|  clock_IBUF_BUFG | dut/l2/n_0/mult_valid_reg_21[0]    | dut/l2/n_22/comboAdd_i_2__12_n_30            |                6 |             32 |         5.33 |
+|  clock_IBUF_BUFG | dut/l2/n_0/mult_valid_reg_20[0]    | dut/l2/n_21/comboAdd_i_2__11_n_30            |               10 |             32 |         3.20 |
+|  clock_IBUF_BUFG | dut/l1/n_0/mult_valid_reg_3[0]     | dut/l1/n_4/comboAdd_i_2__29_n_30             |                9 |             32 |         3.56 |
+|  clock_IBUF_BUFG | dut/l2/n_0/mult_valid_reg_11[0]    | dut/l2/n_12/comboAdd_i_2__7_n_30             |                8 |             32 |         4.00 |
+|  clock_IBUF_BUFG | dut/l2/n_0/mult_valid_reg_2[0]     | dut/l2/n_3/comboAdd_i_2__0_n_30              |               10 |             32 |         3.20 |
+|  clock_IBUF_BUFG | dut/l3/n_0/mult_valid_reg_7[0]     | dut/l3/n_8/comboAdd_i_2__20_n_30             |                9 |             32 |         3.56 |
+|  clock_IBUF_BUFG | dut/l2/n_0/mult_valid_reg_6[0]     | dut/l2/n_7/comboAdd_i_2__3_n_30              |               10 |             32 |         3.20 |
+|  clock_IBUF_BUFG | dut/l1/n_0/mult_valid_reg_24[0]    | dut/l1/n_25/comboAdd_i_2__37_n_30            |                9 |             32 |         3.56 |
+|  clock_IBUF_BUFG | dut/l1/n_0/mult_valid_reg_26[0]    | dut/l1/n_27/comboAdd_i_2__39_n_30            |               10 |             32 |         3.20 |
+|  clock_IBUF_BUFG | dut/l1/n_0/mult_valid_reg_4[0]     | dut/l1/n_5/comboAdd_i_2__30_n_30             |               10 |             32 |         3.20 |
+|  clock_IBUF_BUFG | dut/l1/n_0/mult_valid_reg_23[0]    | dut/l1/n_24/comboAdd_i_2__36_n_30            |               12 |             32 |         2.67 |
+|  clock_IBUF_BUFG | dut/l1/n_0/mult_valid_reg_21[0]    | dut/l1/n_22/comboAdd_i_2__35_n_30            |                7 |             32 |         4.57 |
+|  clock_IBUF_BUFG | dut/l1/n_0/mult_valid_reg_28[0]    | dut/l1/n_29/comboAdd_i_2__40_n_30            |                9 |             32 |         3.56 |
+|  clock_IBUF_BUFG | dut/l1/n_0/mult_valid_reg_25[0]    | dut/l1/n_26/comboAdd_i_2__38_n_30            |               12 |             32 |         2.67 |
+|  clock_IBUF_BUFG | dut/l1/n_0/mult_valid_reg_12[0]    | dut/l1/n_13/comboAdd_i_2__34_n_30            |                8 |             32 |         4.00 |
+|  clock_IBUF_BUFG | dut/l1/n_0/mult_valid_reg_9[0]     | dut/l1/n_10/comboAdd_i_2__33_n_30            |                9 |             32 |         3.56 |
+|  clock_IBUF_BUFG | dut/l1/n_0/mult_valid_reg_8[0]     | dut/l1/n_9/comboAdd_i_2__32_n_30             |                7 |             32 |         4.57 |
+|  clock_IBUF_BUFG | dut/l1/n_0/mult_valid_reg_5[0]     | dut/l1/n_6/comboAdd_i_2__31_n_30             |                9 |             32 |         3.56 |
+|  clock_IBUF_BUFG | dut/l2/n_0/mult_valid_reg_17[0]    | dut/l2/n_18/comboAdd_i_2__9_n_30             |                9 |             32 |         3.56 |
+|  clock_IBUF_BUFG | dut/l2/n_0/mult_valid_reg_23[0]    | dut/l2/n_24/comboAdd_i_2__13_n_30            |                8 |             32 |         4.00 |
+|  clock_IBUF_BUFG | dut/l2/n_0/mult_valid_reg_5[0]     | dut/l2/n_6/comboAdd_i_2__2_n_30              |                7 |             32 |         4.57 |
+|  clock_IBUF_BUFG |                                    | reset_IBUF_BUFG                              |               19 |             38 |         2.00 |
+| ~clock_IBUF_BUFG | UART/PS1/serial_data[7]_i_1_n_30   | reset_IBUF_BUFG                              |               10 |             40 |         4.00 |
+|  clock_IBUF_BUFG | dut/l4/n_0/outvalid_reg_0          |                                              |               51 |            160 |         3.14 |
+|  clock_IBUF_BUFG | dut/l3/n_0/holdData_3              |                                              |               36 |            168 |         4.67 |
+|  clock_IBUF_BUFG |                                    |                                              |              101 |            197 |         1.95 |
+|  clock_IBUF_BUFG | read_valid                         | dut/mFind/o_data_valid_reg_0                 |               88 |            258 |         2.93 |
+|  clock_IBUF_BUFG | dut/l2/n_0/holdData_2              |                                              |               85 |            488 |         5.74 |
+|  clock_IBUF_BUFG | dut/l1/n_0/holdData_1              |                                              |              116 |            563 |         4.85 |
+| ~clock_IBUF_BUFG | UART/UB1/image[12543]_i_1_n_30     | reset_IBUF_BUFG                              |             3072 |          12544 |         4.08 |
+| ~clock_IBUF_BUFG | UART/PS1/image_buf[12543]_i_1_n_30 | reset_IBUF_BUFG                              |             3508 |          12544 |         3.58 |
+|  clock_IBUF_BUFG | dut/holdData_0                     |                                              |             3766 |          12643 |         3.36 |
++------------------+------------------------------------+----------------------------------------------+------------------+----------------+--------------+
+
+

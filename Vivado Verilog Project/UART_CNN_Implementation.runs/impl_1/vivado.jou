@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:14:34 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Thu Apr 18 23:38:43 2024
+# Process ID: 21100
+# Current directory: D:/IISC/SEM_2/FPGA/CNN/UART_CNN_Implementation/UART_CNN_Implementation.runs/impl_1
+# Command line: vivado.exe -log DNN_top.vdi -applog -product Vivado -messageDb vivado.pb -mode batch -source DNN_top.tcl -notrace
+# Log file: D:/IISC/SEM_2/FPGA/CNN/UART_CNN_Implementation/UART_CNN_Implementation.runs/impl_1/DNN_top.vdi
+# Journal file: D:/IISC/SEM_2/FPGA/CNN/UART_CNN_Implementation/UART_CNN_Implementation.runs/impl_1\vivado.jou
+# Running On: DESKTOP-S44V6ID, OS: Windows, CPU Frequency: 1190 MHz, CPU Physical cores: 4, Host memory: 16935 MB
+#-----------------------------------------------------------
+source DNN_top.tcl -notrace

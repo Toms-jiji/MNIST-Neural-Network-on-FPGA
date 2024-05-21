@@ -1,0 +1,24 @@
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/IISC/SEM_2/FPGA/CNN/UART_CNN_Implementation/UART_CNN_Implementation.srcs/sources_1/imports/Toms/Layer_1.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Layer_1
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/IISC/SEM_2/FPGA/CNN/UART_CNN_Implementation/UART_CNN_Implementation.srcs/sources_1/imports/Toms/Layer_2.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Layer_2
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/IISC/SEM_2/FPGA/CNN/UART_CNN_Implementation/UART_CNN_Implementation.srcs/sources_1/imports/Toms/Layer_3.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Layer_3
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/IISC/SEM_2/FPGA/CNN/UART_CNN_Implementation/UART_CNN_Implementation.srcs/sources_1/imports/Toms/Layer_4.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Layer_4
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/IISC/SEM_2/FPGA/CNN/UART_CNN_Implementation/UART_CNN_Implementation.srcs/sources_1/imports/Toms/Sig_ROM.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Sig_ROM
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/IISC/SEM_2/FPGA/CNN/UART_CNN_Implementation/UART_CNN_Implementation.srcs/sources_1/imports/Toms/Weight_Memory.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module Weight_Memory
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/IISC/SEM_2/FPGA/CNN/UART_CNN_Implementation/UART_CNN_Implementation.srcs/sources_1/imports/Toms/maxFinder.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module maxFinder
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/IISC/SEM_2/FPGA/CNN/UART_CNN_Implementation/UART_CNN_Implementation.srcs/sources_1/imports/Toms/neuron.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module neuron
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/IISC/SEM_2/FPGA/CNN/UART_CNN_Implementation/UART_CNN_Implementation.srcs/sources_1/imports/Toms/relu.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module ReLU
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/IISC/SEM_2/FPGA/CNN/UART_CNN_Implementation/UART_CNN_Implementation.srcs/sources_1/imports/Toms/zynet.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module zyNet
+INFO: [VRFC 10-2263] Analyzing Verilog file "D:/IISC/SEM_2/FPGA/CNN/UART_CNN_Implementation/UART_CNN_Implementation.srcs/sim_1/new/tb_zynet_acuracy.v" into library xil_defaultlib
+INFO: [VRFC 10-311] analyzing module tb_zynet_acuracy
+ERROR: [VRFC 10-9568] first argument of '$readmemb' must be a file name [D:/IISC/SEM_2/FPGA/CNN/UART_CNN_Implementation/UART_CNN_Implementation.srcs/sim_1/new/tb_zynet_acuracy.v:121]
+ERROR: [VRFC 10-8530] module 'tb_zynet_acuracy' is ignored due to previous errors [D:/IISC/SEM_2/FPGA/CNN/UART_CNN_Implementation/UART_CNN_Implementation.srcs/sim_1/new/tb_zynet_acuracy.v:47]
